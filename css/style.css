@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+/*---Typography---*/
+.titlesplash {
+    font-size: 2.5em;
+    display: block;
+    color: rgb(253, 176, 0);
+    margin-top: 1em
+      
+}
+.titlesplash span{
+    font-weight: 300;
+    display: block;
+    font-size: .9em;
+}
+h1 {
+    font-weight: 300;
+    font-size: 2.5em;
+}
+/*---Button---*/
+.button {
+    display: inline-block;
+    font-size: 1.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5em 1.55em ;
+    color: 
+}
+.button-accent {
+    color: rgb(253, 176, 0);
+    border-color: rgb(253, 176, 0);
+}
+.button-accent:hover, .button-accent:focus {
+    background: rgba(214, 160, 37, 0.37);
+    color:rgb(255, 177, 0);
+}
+/*---Header---*/
+header {
+    margin-top: 1em;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.logo {
+    height: 8.5em;
+    
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    display: inline-block;
+    margin: 0;
+}
+nav a {
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8em;
+    padding: .5em;
+    margin: 1em;
+    color: rgb(255, 177, 0);
+}
+nav a:hover, nav a:focus {
+    color: rgb(245, 215, 146);
+}
+/*---Home Splash---*/
+.homesplash {
+    background:  linear-gradient(
+      rgba(21, 20, 20, 0.9), 
+      rgba(33, 31, 29, 0.76)
+    ), url(/img/photostudio.jpg);
+    background-size: cover;
+
+    padding: 10.2em;
+
+}
+
+/*---FOR MOBIlE---*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+.home-about-textbox {
+    background: #232323;
+    padding: 3em;
+    width: 100vw;
+    outline: 2px solid rgb(253, 176, 0);
+    outline-offset: -2.5em;
+    color: #FFF;
+    
+}
+.home-about-textbox h1 {
+    color: rgb(253, 176, 0);
+}
+@media (min-width: 60em)
+{
+    .logo {
+        float: left;
+        margin-left: 1.2em;
+    }
+    nav {
+        float: right;
+        margin: 1em;
+        
+    }
+    .homesplash {
+        height: 100vh;
+        padding-top: 35vh;
+        background-position: center;
+    }
+    .button {
+        font-size: 1.5em
+    }
+}
+
