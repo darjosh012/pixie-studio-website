@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    transition: all ease-in-out 250ms;
 }
 body {
     margin: 0;
@@ -12,10 +13,10 @@ body {
 /*---Typography---*/
 .titlesplash {
     font-size: 2.5em;
-    display: block;
     color: rgb(253, 176, 0);
-    margin-top: 1em
-      
+    margin-top: 1em;
+    width: auto;
+    
 }
 .titlesplash span{
     font-weight: 300;
@@ -25,6 +26,13 @@ body {
 h1 {
     font-weight: 300;
     font-size: 2.5em;
+    margin-top: 0;
+}
+.clearfix::after,
+section::after {
+    content: '';
+    display: block;
+    clear: both;
 }
 /*---Button---*/
 .button {
@@ -35,7 +43,10 @@ h1 {
     border-width: 2px;
     border-style: solid;
     padding: .5em 1.55em ;
-    color: 
+}
+.button-small {
+    font-size: .8rem;
+    font-weight: 700;
 }
 .button-accent {
     color: rgb(253, 176, 0);
@@ -44,6 +55,13 @@ h1 {
 .button-accent:hover, .button-accent:focus {
     background: rgba(214, 160, 37, 0.37);
     color:rgb(255, 177, 0);
+}
+p {
+    margin-top: 0;
+    line-height: 1.5;
+}
+p:last-of-type {
+    margin-bottom: 0;
 }
 /*---Header---*/
 header {
@@ -79,13 +97,12 @@ nav a:hover, nav a:focus {
 }
 /*---Home Splash---*/
 .homesplash {
-    background:  linear-gradient(
+    background: linear-gradient(
       rgba(21, 20, 20, 0.9), 
-      rgba(33, 31, 29, 0.76)
+      rgba(82, 52, 22, 0.56)
     ), url(/img/photostudio.jpg);
     background-size: cover;
-
-    padding: 10.2em;
+   padding: 10.2em 2em;
 
 }
 
@@ -96,7 +113,9 @@ img {
 }
 .container {
     width: 95%;
+    max-width: 75em;
     margin: 0 auto;
+
 }
 .home-about-textbox {
     background: #232323;
@@ -105,10 +124,31 @@ img {
     outline: 2px solid rgb(253, 176, 0);
     outline-offset: -2.5em;
     color: #FFF;
+    position: relative;
     
 }
 .home-about-textbox h1 {
     color: rgb(253, 176, 0);
+    position: absolute;
+    top:1.3em;
+    background: #232323;
+    padding: 0 0.25em 0 0.25em;
+   
+     left: 50%;
+    transform: translateX(-50%);
+    
+    
+}
+
+@media (min-width: 17.5em){
+    h1 {
+        font-size: 1.34em;
+    }
+    .home-about-textbox{
+        padding: 4em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 @media (min-width: 60em)
 {
@@ -118,8 +158,7 @@ img {
     }
     nav {
         float: right;
-        margin: 1em;
-        
+        margin: 1em;     
     }
     .homesplash {
         height: 100vh;
@@ -127,7 +166,85 @@ img {
         background-position: center;
     }
     .button {
-        font-size: 1.5em
+        font-size: 1.5em;
+    }
+    h1 {
+        font-size: 1.51em;
+    }
+    .home-about {
+        background-image: url(/img/second-column-photo.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 10em;           
+    }
+    .home-about-textbox{
+        width: 40%;
+        margin-left: -1.5em;
+        top: -5em;
+        padding: 5em;
+        outline-offset: -3em;
+        text-align: left;
+        box-shadow: 0 0 4em 0 rgba(0, 0, 0, .50);
+        left: 0%;
+        transform: translateX(0);
+
+    }
+    .home-about-textbox h1{
+        top: 1.2em;
+        left: 9rem;
+    }
+}
+
+/*---PORTFOLIO---*/
+.portfolio-one-half {
+   margin: 3em 0 0;
+}
+.port-items {
+    margin: 0;
+    position: relative;
+    }
+.port-items img {
+    display: block;
+}
+.port-desc {
+    position: absolute;
+    z-index: 100;
+    bottom: 0em;
+    left: 0em;
+    right: 0em;
+    color: white;
+    background: rgba(0,0,0,.60);
+    padding-bottom: 2em;
+}
+.port-desc p{
+    margin: 1em;
+}
+.cta {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.9), 
+      rgba(82, 52, 22, 0.56)
+    ), url(/img/photo-bottom.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em;
+}
+
+@media (min-width: 37em) {
+    .port-items {
+        width: 50%;
+        float: left;
+    }
+}
+@media (min-width: 60em) {
+    .port-items {
+        width: 33.3333334%;
+        overflow: hidden;
+    }
+    .port-desc {
+        transform: translateY(150%);
+    }
+    .port-items:hover .port-desc {
+        transform: translateY(0%);
     }
 }
 
